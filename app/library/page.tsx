@@ -1,4 +1,5 @@
 import { StickerGrid } from "@/components/ui/sticker-grid";
+import type { StickerVariant } from "@/lib/constants";
 
 const placeholderStickers = [
   {
@@ -7,7 +8,7 @@ const placeholderStickers = [
     style: "Paperclipish",
     background: "Confetti",
     createdAt: "2 hours ago",
-    variant: "sunrise"
+    variant: "sunrise" as StickerVariant
   },
   {
     id: "2",
@@ -15,7 +16,7 @@ const placeholderStickers = [
     style: "Binder-clip",
     background: "Transparent",
     createdAt: "Yesterday",
-    variant: "lagoon"
+    variant: "lagoon" as StickerVariant
   },
   {
     id: "3",
@@ -23,7 +24,7 @@ const placeholderStickers = [
     style: "Pushpin",
     background: "Desk",
     createdAt: "Last week",
-    variant: "twilight"
+    variant: "twilight" as StickerVariant
   }
 ];
 

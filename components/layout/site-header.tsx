@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { Dialog, DialogPanel, Disclosure } from "@headlessui/react";
+import { Dialog, Disclosure } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
@@ -59,7 +59,7 @@ export function SiteHeader() {
       </nav>
       <Dialog className="md:hidden" onClose={setMobileOpen} open={mobileOpen}>
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-        <DialogPanel className="fixed inset-y-0 right-0 w-80 max-w-full bg-white p-6 shadow-lg">
+        <div className="fixed inset-y-0 right-0 w-80 max-w-full bg-white p-6 shadow-lg">
           <div className="flex items-center justify-between">
             <Link className="font-semibold text-primary-700" href="/" onClick={() => setMobileOpen(false)}>
               MoodClip
@@ -98,7 +98,7 @@ export function SiteHeader() {
               Create sticker
             </Link>
           </div>
-        </DialogPanel>
+        </div>
       </Dialog>
     </header>
   );

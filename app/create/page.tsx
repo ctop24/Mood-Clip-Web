@@ -26,7 +26,7 @@ export default function CreatePage() {
   const router = useRouter();
   const [prompt, setPrompt] = React.useState("");
   const [style, setStyle] = React.useState<(typeof styles)[number]["id"]>(styles[0]?.id ?? "paperclipish");
-  const [background, setBackground] = React.useState(backgrounds[0]?.id ?? "transparent");
+  const [background, setBackground] = React.useState<(typeof backgrounds)[number]["id"]>(backgrounds[0]?.id ?? "transparent");
   const [intensity, setIntensity] = React.useState(5);
   const [caption, setCaption] = React.useState("");
   const [isGenerating, setIsGenerating] = React.useState(false);
@@ -176,7 +176,7 @@ export default function CreatePage() {
             <select
               className="w-full rounded-2xl border border-slate-200 bg-white/90 px-4 py-3 text-base shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200"
               value={background}
-              onChange={(event) => setBackground(event.target.value)}
+              onChange={(event) => setBackground(event.target.value as typeof background)}
             >
               {backgrounds.map((option) => (
                 <option key={option.id} value={option.id}>
@@ -296,7 +296,7 @@ export default function CreatePage() {
         <div className="rounded-3xl border border-white/40 bg-white/60 p-6 shadow-lg backdrop-blur">
           <h3 className="text-base font-semibold text-slate-900">Pro tips</h3>
           <ul className="mt-3 space-y-2 text-sm text-slate-600">
-            <li>Keep prompts short and specific ("Victory dance" beats "We launched the project and everyone is happy").</li>
+            <li>Keep prompts short and specific (&ldquo;Victory dance&rdquo; beats &ldquo;We launched the project and everyone is happy&rdquo;).</li>
             <li>Intensity controls motion curves and expressions.</li>
             <li>Signed-in creators get unlimited history and Teams share links.</li>
           </ul>
